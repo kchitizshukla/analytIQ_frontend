@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   AnalytIQ — themeable design tokens (Deep Purple + Lavender)
+   Colors are RGB channel triplets so Tailwind's `/alpha` modifiers work via
+   `rgb(var(--c-x) / <alpha-value>)` in tailwind.config.ts.
+   Dark is the default (:root). Light applies under [data-theme="light"].
+   =========================================================================== */
+:root, :root[data-theme="dark"] {
+  color-scheme: dark;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --c-ink-50: 16 14 21;
+  --c-ink-100: 33 28 43;
+  --c-ink-200: 43 38 53;
+  --c-ink-300: 58 51 71;
+  --c-ink-400: 153 146 168;
+  --c-ink-500: 167 159 181;
+  --c-ink-600: 201 195 211;
+  --c-ink-700: 214 208 224;
+  --c-ink-800: 231 227 239;
+  --c-ink-900: 245 242 250;
+  --c-ink-950: 251 250 253;
+  --c-brand-50: 35 27 53;
+  --c-brand-100: 42 33 64;
+  --c-brand-200: 52 42 80;
+  --c-brand-300: 74 59 115;
+  --c-brand-400: 126 101 197;
+  --c-brand-500: 155 122 232;
+  --c-brand-600: 155 122 232;
+  --c-brand-700: 173 145 240;
+  --c-brand-800: 191 169 244;
+  --c-brand-900: 205 186 247;
+  --c-brand-950: 15 10 26;
+  --c-accent-400: 201 184 246;
+  --c-accent-500: 191 169 244;
+  --c-accent-600: 173 145 240;
+  --c-emerald-50: 25 56 45;
+  --c-emerald-100: 30 68 53;
+  --c-emerald-200: 40 96 71;
+  --c-emerald-300: 111 214 170;
+  --c-emerald-400: 72 199 142;
+  --c-emerald-500: 72 199 142;
+  --c-emerald-600: 72 199 142;
+  --c-emerald-700: 95 209 158;
+  --c-emerald-800: 127 224 181;
+  --c-emerald-900: 25 56 45;
+  --c-amber-50: 58 48 29;
+  --c-amber-100: 74 62 36;
+  --c-amber-200: 98 81 38;
+  --c-amber-300: 234 199 132;
+  --c-amber-400: 231 184 92;
+  --c-amber-500: 231 184 92;
+  --c-amber-600: 231 184 92;
+  --c-amber-700: 234 194 122;
+  --c-amber-800: 240 209 149;
+  --c-amber-900: 58 48 29;
+  --c-red-50: 58 32 37;
+  --c-red-100: 74 42 48;
+  --c-red-200: 99 52 59;
+  --c-red-300: 240 150 158;
+  --c-red-400: 229 107 117;
+  --c-red-500: 229 107 117;
+  --c-red-600: 229 107 117;
+  --c-red-700: 212 85 95;
+  --c-red-800: 240 160 168;
+  --c-red-900: 58 32 37;
+  --c-violet-50: 32 44 64;
+  --c-violet-100: 38 52 77;
+  --c-violet-200: 52 73 106;
+  --c-violet-300: 166 194 240;
+  --c-violet-400: 127 167 232;
+  --c-violet-500: 127 167 232;
+  --c-violet-600: 127 167 232;
+  --c-violet-700: 155 186 238;
+  --c-violet-800: 183 206 243;
+  --c-violet-900: 32 44 64;
+  --c-surface: 25 22 33;
+  --c-background: 16 14 21;
+  --c-elevated: 33 28 43;
+  --c-hover: 39 33 55;
+  --c-sidebar: 21 18 28;
+  --c-success: 72 199 142;
+  --c-warning: 231 184 92;
+  --c-error: 229 107 117;
+  --c-info: 127 167 232;
+  --input-bg: #15121C;
+  --input-border: #393344;
+  --placeholder: #777080;
+  --ring: rgba(155,122,232,.18);
+  --overlay: rgba(16,14,21,.72);
+  --loader-diamond: #9B7AE8;
+  --loader-bg: #191621;
+  --loader-glow: rgba(155,122,232,.18);
+  --shadow-soft: 0 1px 2px rgba(0,0,0,.30), 0 4px 16px rgba(0,0,0,.38);
+  --shadow-glow: 0 0 0 1px rgba(155,122,232,.22), 0 8px 30px rgba(155,122,232,.18);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --c-ink-50: 247 246 250;
+  --c-ink-100: 240 238 245;
+  --c-ink-200: 228 223 236;
+  --c-ink-300: 213 205 225;
+  --c-ink-400: 119 112 128;
+  --c-ink-500: 102 95 115;
+  --c-ink-600: 81 74 95;
+  --c-ink-700: 62 56 75;
+  --c-ink-800: 46 40 56;
+  --c-ink-900: 33 28 43;
+  --c-ink-950: 21 18 28;
+  --c-brand-50: 241 234 251;
+  --c-brand-100: 231 222 248;
+  --c-brand-200: 217 204 242;
+  --c-brand-300: 195 174 234;
+  --c-brand-400: 155 122 232;
+  --c-brand-500: 118 85 199;
+  --c-brand-600: 118 85 199;
+  --c-brand-700: 104 72 182;
+  --c-brand-800: 90 61 160;
+  --c-brand-900: 74 49 134;
+  --c-brand-950: 237 230 251;
+  --c-accent-400: 185 166 242;
+  --c-accent-500: 155 122 232;
+  --c-accent-600: 118 85 199;
+  --c-emerald-50: 231 245 238;
+  --c-emerald-100: 213 238 225;
+  --c-emerald-200: 182 224 203;
+  --c-emerald-300: 79 177 131;
+  --c-emerald-400: 48 153 107;
+  --c-emerald-500: 37 134 91;
+  --c-emerald-600: 37 134 91;
+  --c-emerald-700: 31 116 79;
+  --c-emerald-800: 25 97 63;
+  --c-emerald-900: 231 245 238;
+  --c-amber-50: 251 243 226;
+  --c-amber-100: 246 232 201;
+  --c-amber-200: 235 214 160;
+  --c-amber-300: 199 154 58;
+  --c-amber-400: 169 126 38;
+  --c-amber-500: 154 113 30;
+  --c-amber-600: 154 113 30;
+  --c-amber-700: 130 95 26;
+  --c-amber-800: 107 78 21;
+  --c-amber-900: 251 243 226;
+  --c-red-50: 251 234 236;
+  --c-red-100: 246 216 220;
+  --c-red-200: 235 183 189;
+  --c-red-300: 221 117 128;
+  --c-red-400: 209 90 101;
+  --c-red-500: 201 78 89;
+  --c-red-600: 201 78 89;
+  --c-red-700: 174 64 73;
+  --c-red-800: 147 52 60;
+  --c-red-900: 251 234 236;
+  --c-violet-50: 236 241 250;
+  --c-violet-100: 219 229 245;
+  --c-violet-200: 190 207 238;
+  --c-violet-300: 126 158 214;
+  --c-violet-400: 102 135 196;
+  --c-violet-500: 85 121 183;
+  --c-violet-600: 85 121 183;
+  --c-violet-700: 71 105 159;
+  --c-violet-800: 58 87 134;
+  --c-violet-900: 236 241 250;
+  --c-surface: 255 255 255;
+  --c-background: 247 246 250;
+  --c-elevated: 243 239 250;
+  --c-hover: 235 228 247;
+  --c-sidebar: 251 250 253;
+  --c-success: 37 134 91;
+  --c-warning: 154 113 30;
+  --c-error: 201 78 89;
+  --c-info: 85 121 183;
+  --input-bg: #FFFFFF;
+  --input-border: #D8D1E2;
+  --placeholder: #9B94A8;
+  --ring: rgba(118,85,199,.20);
+  --overlay: rgba(247,246,250,.72);
+  --loader-diamond: #7655C7;
+  --loader-bg: #FFFFFF;
+  --loader-glow: rgba(118,85,199,.14);
+  --shadow-soft: 0 1px 2px rgba(16,14,21,.05), 0 4px 16px rgba(16,14,21,.07);
+  --shadow-glow: 0 0 0 1px rgba(118,85,199,.14), 0 10px 30px rgba(118,85,199,.12);
+}
+
+html, body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+}
+
+/* subtle theme-switch transition (colors only — no layout shift) */
+*, ::before, ::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+/* don't delay-fight component motion libraries */
+[data-no-theme-transition] * { transition: none !important; }
+
+/* custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--input-bg); }
+::-webkit-scrollbar-thumb { background: rgb(var(--c-border-strong, var(--c-ink-300))); border-radius: 9999px; }
+::-webkit-scrollbar-thumb { background: rgb(var(--c-ink-300)); }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-ink-400)); }
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ink-200 bg-surface shadow-soft;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold
+           transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-sm hover:shadow-glow;
+  }
+  .btn-ghost {
+    @apply btn bg-elevated text-ink-600 border border-ink-300 hover:bg-hover hover:text-ink-900 hover:border-ink-300;
+  }
+  .btn-soft {
+    @apply btn bg-brand-50 text-brand-700 hover:bg-brand-100;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium;
+  }
+  .input {
+    @apply w-full rounded-xl border px-3.5 py-2.5 text-sm text-ink-900 focus:outline-none focus:ring-2;
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+  }
+  .input::placeholder { color: var(--placeholder); }
+  .input:focus { border-color: rgb(var(--c-brand-600)); --tw-ring-color: var(--ring); }
+  .label { @apply text-xs font-semibold uppercase tracking-wide text-ink-500; }
+}
+
+/* gradient text + mesh background used on marketing / auth surfaces */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(90deg, rgb(var(--c-brand-600)), rgb(var(--c-accent-500)));
+}
+.mesh {
+  background:
+    radial-gradient(60% 60% at 15% 10%, rgb(var(--c-brand-500) / .16), transparent 60%),
+    radial-gradient(50% 50% at 85% 20%, rgb(var(--c-accent-500) / .10), transparent 60%),
+    radial-gradient(60% 60% at 70% 90%, rgb(var(--c-brand-400) / .12), transparent 60%);
+}
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(var(--c-ink-900) / .04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--c-ink-900) / .04) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* branded loader keyframes */
+@keyframes aiq-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+@keyframes aiq-spin { to { transform: rotate(360deg) } }
+@keyframes aiq-pulse { 0%,100% { opacity: .55 } 50% { opacity: 1 } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
